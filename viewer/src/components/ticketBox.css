@@ -1,0 +1,17 @@
+.ticket_wrapper{
+    position: relative;
+    text-align:center;
+}
+.ticket_box_text {
+    position: relative;
+    padding : 5px;
+    text-align: center;
+}
+  
+
+.ticketitemheadertext {
+    font-size: 0.7em;
+    padding : 1px;
+}
+
+

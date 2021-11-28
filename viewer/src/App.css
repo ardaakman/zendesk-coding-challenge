@@ -1,0 +1,22 @@
+.ticket_list {
+    position : relative;
+
+}
+
+
+.header {
+    position: relative;
+    text-align : center;
+}
+
+.forward_button {
+    position: relative;
+    left: 70%;
+    bottom : 5%;
+}
+
+.backward_button {
+    position: relative;
+    left: 17%;
+    bottom : 5%;
+}
