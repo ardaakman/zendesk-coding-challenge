@@ -46,7 +46,6 @@ function App() {
         setError(false)
       } catch(error) {
         setError(true)
-        console.warn(data.tickets)
       }
     }
     fetchedData();
