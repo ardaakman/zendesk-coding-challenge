@@ -7,7 +7,6 @@
   "scripts": {
     "server": "node server.js",
     "client": "npm start --prefix viewer",
-    "test" : "jest",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "author": "ArdaAkman",
@@ -18,7 +17,6 @@
     "base-64": "^1.0.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jest": "^27.3.1",
     "node-fetch": "^3.1.0"
   },
   "devDependencies": {

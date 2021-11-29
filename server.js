@@ -3,7 +3,7 @@ import express from 'express';
 import base64 from 'base-64';
 import { Headers } from 'node-fetch';
 import cors from 'cors';
-import { ticketParser, errorHandle } from './parsingCalls.js';
+import { ticketParser} from './parsingCalls.js';
 
 
 // Create an express server, with cors on.
@@ -48,7 +48,7 @@ function fetchData(headers) {
     console.log("Error Catched!"));
 }
 
-value = fetchData(hedaers);
+value = fetchData(headers);
 //Posting the result of the API Call and parsing to the backend server.
 app.get('/backend', (req, res) => {
   res.send({tickets : value});
