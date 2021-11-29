@@ -1,4 +1,3 @@
-import { render, screen } from '@testing-library/react';
 import {ticketGroup, isAvaliable} from '../src/groups.js'
 
 //Not trying the zero test case- that already is dealt with the error thrown in the App.js file.
