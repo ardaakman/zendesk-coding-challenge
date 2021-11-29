@@ -1,3 +1,6 @@
+//Helper functions I used for the frontend process
+
+//After the fetch, gets the current amount of tickets avaliable and puts them into groups of 25 (for page through view)
 export function ticketGroup(tickets){
     let group = []
     let current= []
@@ -15,7 +18,7 @@ export function ticketGroup(tickets){
     return group
   }
 
-
+// Not used - Used to use this function, but ended up not useful. Given a string, returns the first 12 words in the string.
 export function firstTw(str){
     let i = 0
     let word_count = 0
@@ -28,16 +31,18 @@ export function firstTw(str){
     return str.substring(0, i) + "..."
 }
 
+// Parses the date in the fetched tickets into a human readable date.
 export function dateParser(str){
     var dateNew = new Date(str);
     return dateNew.toDateString();
 }
 
 
+// checks if the value in the fields of the ticket is avaliable (not null), and returns '{value_name} not avaliable' if it is not
 export function isAvaliable(pre, str) {
     if (str != null) {
         return str
     } else {
-        return pre + " not avaliable"
+        return pre + " is not avaliable"
     }
 }

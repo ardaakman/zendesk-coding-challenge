@@ -16,13 +16,23 @@ import {MdExpandMore} from "react-icons/md";
 import Container from '@mui/material/Container'
 import LineComponent from './lineComponent.js'
 
+
+
+/*The main component of are UI. This is the component that denotes a single 'Ticket Box' in the UI, which has the functionality
+of being able to expand when clicked on the icon.
+*/
 function TicketListItem(props){
   const [expanded, setExpand] = useState(false)
 
+//Expands the box when the icon is clicked.
   const handleExpandClick = (() => {
   setExpand(!expanded)
 })
 
+
+/*This element does the 'switching' when we click the expand icon. It rotates the arrow 180 degrees (making it a upward arrow)
+then transfers the arrow to the right of the new expanded portion of the box.
+*/
 const ExpandMoreInt = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other}/>;
@@ -34,6 +44,17 @@ const ExpandMoreInt = styled((props) => {
   }),
 }));
   
+
+
+  /* Main return of the TicketBox Component. Most of the components were imported from the Material UI component library.
+     Main components include:
+        ** The initial ticket box, denoted by a card. Contains a CardContent component inside it, which in turn contains
+            multiple typography components with the information denoted inside them.
+        ** A CardActions components which contains the ExpandMoreInt element, which has the functionality of switching the 
+            direction of the expansion arrow and also expanding the ticket box. 
+        ** The collapse component, which includes the contents of the expanded Card. It Contains a CardContent component,
+            which's contents are wrapped by a Container.
+  */
   return (
     <div className = "ticket_wrapper">
       <Card className = "ticket_box" variant = "outlined" width = "30vw">

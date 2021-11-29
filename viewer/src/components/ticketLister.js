@@ -1,8 +1,9 @@
 import React from 'react'
-import PageSelector from './pages.js'
 import TicketListItem from './ticketBox.js'
 import './ticketBox.css'
 
+
+//Component that returns a list of TicketBoxes through a mapping function.
 function TicketList(props) {
     const items = (props.group.map(c =>  <TicketListItem key = {c} ticket = {props.ticket.tickets[c]}
      />))

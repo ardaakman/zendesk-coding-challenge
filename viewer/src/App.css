@@ -26,3 +26,7 @@
     text-align : center;
 }
 
+.counter {
+    position : relative;
+    left : 1%;
+}
