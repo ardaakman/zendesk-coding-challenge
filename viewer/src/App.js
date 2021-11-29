@@ -17,45 +17,48 @@ function App() {
   const [tickets, setTickets] = useState([]);
   const [groupedTickets, setGroupedTickets] = useState([]);
   const [currentGroup, setGroup] = useState(0);
+  const [errorMes, setErrorMes] = useState("")
   
-  useEffect(() => {
-    fetch('http://localhost:5000/backend').then((res) => res.json())
-    .then((datum) => setData(datum))
-    .catch(error =>  
-      console.warn("An Error Fetching the Data has Occured", error),
-      ).finally(() => {
+
+
+    useEffect(() => {
+    const fetchedData = async () => {
+      try{
+        console.log("Fetching")
+        const res = await fetch('http://localhost:5000/backend')
+        const ret = await res.json()
+        console.warn(ret)
+        setData(ret)
+        setGroupedTickets(ticketGroup(ret))
+        setLoading(false)
         setError(false)
-        console.warn("Fetching Data Now")
-        try{
-          setGroupedTickets(ticketGroup(data));
-          setLoading(false);
-        } catch (error) {
-          console.warn(error)
-          setError(true)
-        }
-      })}, [error])
+      } catch(error) {
+        setError(true)
+        setErrorMes(error.toString())
+      }
+    }
+    fetchedData();
+  }, []);
   
   const upPage = (() => {
     if (currentGroup != groupedTickets.length -1 ){
-      console.warn("Pressed")
-      console.warn(groupedTickets.length)
       setGroup(currentGroup + 1)
     }
   })
 
     const downPage = (() => {
     if (currentGroup != 0){
-      console.warn("Pressed")
-      console.warn(groupedTickets.length)
       setGroup(currentGroup - 1)
     }
   })
 
-  if (error === true) {
-    return (<h1> Some error has occured, please try again after waiting a couple minutes </h1>);
-  } 
-  if (loading === true) {
-    return (<h1>Viewer is loading right now!</h1>)
+
+  if ((loading === true) && (error === false)) {
+    return (<h1> Viewer is loding, please wait </h1>);
+  } else if (error === true) {
+    return (<h1>There has been an error with the API call ({errorMes}). Please try again later.</h1>)
+  } else if (data.tickets === null) {
+    return (<h1> Error: {data}, please check your API access, API token, and potential restrictions to the Zendesk API </h1>)
   } else {
     return (
     <div className="App">

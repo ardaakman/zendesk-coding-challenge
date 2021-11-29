@@ -25,12 +25,31 @@ fetch('https://zccardaakman.zendesk.com/api/v2/requests.json', {method: 'GET', h
         if (res.ok) {
             return res.json()
         } else {
-            throw new Error("Something went wrong, try again later!")
+            handlesErrors(res)
+            throw new Error();
         }
     }).then(str => value = parser.parseAll(str))
-    .then(console.log("Ticket Data Received"));
+    .then(console.log("Ticket Data Received"))
+    .catch(error => 
+    console.log("Error Catched!"));
 
 
 app.get('/backend', (req, res) => { //Line 9
   res.send({tickets : value})
 }); //Line 11s
+
+
+function handlesErrors(response) {
+    if (!response.ok) {
+      console.log("API Request Issue..")
+      let errorText = response.statusText
+      if (errorText === "Unauthorized") {
+        value = errorText + ": Could not authenticate you, please double check your authentication"
+      } else if (errorText === "Forbidden") {
+        value = errorText + ": You were blocked from accesing the Zendesk API. Please create a ticket or contact relevant support." 
+      } else {
+        value = errorText + ": An error occured while authenticating you. Please try again later."
+      }
+  }
+  return
+}

@@ -12,7 +12,6 @@ export function ticketGroup(tickets){
         }
     })
     group.push(current)
-    console.warn(group)
     return group
   }
 
