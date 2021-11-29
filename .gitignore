@@ -10,9 +10,6 @@ viewer/.pnp.js
 backend/node_modules
 backend/.pnp.js
 viewer/yarn.lock
-viewer/babel.config.js
-viewer/jest.config.mjs
-backend/babel.config.json
 backend/yarn.lock
 
 
