@@ -8,20 +8,21 @@
 
 }
 
+.button_group {
+    position : absolute;
+    left : 44%;
+    bottom :0.2%;
+}
+
 
 .header {
     position: relative;
     text-align : center;
+    font-size : large;
 }
 
-.forward_button {
+.alt_header {
     position: relative;
-    bottom : 5%;
-    left : 30%;
+    text-align : center;
 }
 
-.backward_button {
-    position: relative;
-    bottom: 5%;
-    left : 55%;
-}

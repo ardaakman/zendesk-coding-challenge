@@ -31,3 +31,7 @@
     border-style: hidden
 }
 
+.inner_card {
+    position : relative;
+    left: 25%;
+}
