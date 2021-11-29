@@ -40,7 +40,6 @@ function App() {
         console.log("Fetching")
         const res = await fetch('http://localhost:5000/backend')
         const ret = await res.json()
-        console.warn(ret)
         setData(ret)
         setGroupedTickets(ticketGroup(ret))
         setLoading(false)

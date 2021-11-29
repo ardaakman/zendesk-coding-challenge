@@ -4,6 +4,9 @@
 export function ticketGroup(tickets){
     let group = []
     let current= []
+    if (typeof(tickets.tickets) =="string") {
+        throw new Error()
+    }
     let keys = Object.keys(tickets.tickets);
     keys.forEach(element => {
         if (current.length < 25){
