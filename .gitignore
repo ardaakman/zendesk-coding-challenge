@@ -7,6 +7,8 @@
 viewer/.babelrc
 viewer/node_modules
 viewer/.pnp.js
+backend/node_modules
+backend/.pnp.js
 
 
 # testing
