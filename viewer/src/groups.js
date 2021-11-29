@@ -12,6 +12,7 @@ export function ticketGroup(tickets){
         }
     })
     group.push(current)
+    console.warn(group)
     return group
   }
 
@@ -26,4 +27,18 @@ export function firstTw(str){
         i = i + 1
     }
     return str.substring(0, i) + "..."
+}
+
+export function dateParser(str){
+    var dateNew = new Date(str);
+    return dateNew.toDateString();
+}
+
+
+export function isAvaliable(pre, str) {
+    if (str != null) {
+        return str
+    } else {
+        return pre + " not avaliable"
+    }
 }

@@ -1,3 +1,8 @@
+.App {
+    position:relative;
+    align-items: center;
+}
+
 .ticket_list {
     position : relative;
 
@@ -11,12 +16,12 @@
 
 .forward_button {
     position: relative;
-    left: 70%;
     bottom : 5%;
+    left : 30%;
 }
 
 .backward_button {
     position: relative;
-    left: 17%;
-    bottom : 5%;
+    bottom: 5%;
+    left : 55%;
 }

@@ -7,12 +7,11 @@ export class ticketParser {
 
     parseAll(ticketData) {
         let requests = ticketData.requests;
-        let index = 2
+        let index = 1
         requests.forEach(element => {
             this.pairing[index] = element;
             index = index + 1;
         });
-        console.log(Object.keys(this.pairing))
         return this.pairing;
     }
 } 

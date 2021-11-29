@@ -1,11 +1,24 @@
-.ticket_wrapper{
-    position: relative;
-    text-align:center;
+.ticket_header {
+    text-align : center;
 }
+
+.ticket_outer_subject {
+    text-align: center;
+}
+
+.ticket_outer_date {
+    text-align : center;
+}
+
 .ticket_box_text {
     position: relative;
     padding : 5px;
     text-align: center;
+}
+
+.ticket_box_date {
+    position:relative;
+    left:0%;
 }
   
 
@@ -14,4 +27,7 @@
     padding : 1px;
 }
 
+.detailed_materials_container {
+    border-style: hidden
+}
 
